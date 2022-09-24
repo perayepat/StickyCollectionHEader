@@ -13,6 +13,8 @@ class StretchyHeaderViewControl: UICollectionViewController, UICollectionViewDel
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
     fileprivate let padding: CGFloat = 16
+    //refrence to our header
+    var headerView: HeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class StretchyHeaderViewControl: UICollectionViewController, UICollectionViewDel
     
     func setupCollectionViewLayout(){
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
-            layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
+            layout.sectionInset = .init(top: padding , left: padding, bottom: padding, right: padding)
         }
     }
     func setupCollectionView(){
@@ -67,12 +69,25 @@ extension StretchyHeaderViewControl{
     }
     //header
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        return header
+          headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderView
+        return headerView!
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffestY = scrollView.contentOffset.y
+        //dont blur on scroll down
+        if contentOffestY > 0 {
+            headerView?.animator.fractionComplete  = 0
+            return
+        }
+        headerView?.animator.fractionComplete = abs(contentOffestY) / 150
+        
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: 340)
+        return .init(width: view.frame.width, height: 440)
     }
 }
 
