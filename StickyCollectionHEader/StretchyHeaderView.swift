@@ -23,8 +23,8 @@ class StretchyHeaderViewControl: UICollectionViewController, UICollectionViewDel
     }
     
     init() {
-        let layout = UICollectionViewFlowLayout()
-        super.init(collectionViewLayout: layout)
+        
+        super.init(collectionViewLayout: StretchyHeaderLayout())
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -17,6 +17,7 @@
 		43B9983328DF364D007A431F /* StretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9983228DF364D007A431F /* StretchyHeaderView.swift */; };
 		43B9983528DF4642007A431F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9983428DF4642007A431F /* HeaderView.swift */; };
 		43B9983728DF4F3F007A431F /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9983628DF4F3F007A431F /* Extensions+UIView.swift */; };
+		43B9983A28DF526A007A431F /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9983928DF526A007A431F /* StretchyHeaderLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		43B9983228DF364D007A431F /* StretchyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderView.swift; sourceTree = "<group>"; };
 		43B9983428DF4642007A431F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		43B9983628DF4F3F007A431F /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		43B9983928DF526A007A431F /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		43B9981B28DF3393007A431F /* StickyCollectionHEader */ = {
 			isa = PBXGroup;
 			children = (
+				43B9983828DF51E5007A431F /* Custom */,
 				43B9983428DF4642007A431F /* HeaderView.swift */,
 				43B9983028DF3617007A431F /* StretchyHeaderCollectionViewController.swift */,
 				43B9983228DF364D007A431F /* StretchyHeaderView.swift */,
@@ -77,6 +80,14 @@
 				43B9983628DF4F3F007A431F /* Extensions+UIView.swift */,
 			);
 			path = StickyCollectionHEader;
+			sourceTree = "<group>";
+		};
+		43B9983828DF51E5007A431F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				43B9983928DF526A007A431F /* StretchyHeaderLayout.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			files = (
 				43B9983728DF4F3F007A431F /* Extensions+UIView.swift in Sources */,
 				43B9982128DF3393007A431F /* ViewController.swift in Sources */,
+				43B9983A28DF526A007A431F /* StretchyHeaderLayout.swift in Sources */,
 				43B9983528DF4642007A431F /* HeaderView.swift in Sources */,
 				43B9983128DF3617007A431F /* StretchyHeaderCollectionViewController.swift in Sources */,
 				43B9983328DF364D007A431F /* StretchyHeaderView.swift in Sources */,
