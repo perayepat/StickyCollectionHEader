@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4362326928DFA6E900B41DB3 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362326828DFA6E900B41DB3 /* OverviewCell.swift */; };
+		4362326B28E0A46300B41DB3 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362326A28E0A46300B41DB3 /* IngredientCell.swift */; };
 		43B9981D28DF3393007A431F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9981C28DF3393007A431F /* AppDelegate.swift */; };
 		43B9981F28DF3393007A431F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9981E28DF3393007A431F /* SceneDelegate.swift */; };
 		43B9982128DF3393007A431F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9982028DF3393007A431F /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4362326828DFA6E900B41DB3 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
+		4362326A28E0A46300B41DB3 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		43B9981928DF3393007A431F /* StickyCollectionHEader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyCollectionHEader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B9981C28DF3393007A431F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43B9981E28DF3393007A431F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			children = (
 				43B9983828DF51E5007A431F /* Custom */,
 				43B9983428DF4642007A431F /* HeaderView.swift */,
+				4362326A28E0A46300B41DB3 /* IngredientCell.swift */,
 				43B9983028DF3617007A431F /* StretchyHeaderCollectionViewController.swift */,
 				43B9983228DF364D007A431F /* StretchyHeaderView.swift */,
 				43B9981C28DF3393007A431F /* AppDelegate.swift */,
@@ -78,6 +83,7 @@
 				43B9982728DF33A1007A431F /* LaunchScreen.storyboard */,
 				43B9982A28DF33A1007A431F /* Info.plist */,
 				43B9983628DF4F3F007A431F /* Extensions+UIView.swift */,
+				4362326828DFA6E900B41DB3 /* OverviewCell.swift */,
 			);
 			path = StickyCollectionHEader;
 			sourceTree = "<group>";
@@ -162,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				43B9983728DF4F3F007A431F /* Extensions+UIView.swift in Sources */,
+				4362326B28E0A46300B41DB3 /* IngredientCell.swift in Sources */,
 				43B9982128DF3393007A431F /* ViewController.swift in Sources */,
 				43B9983A28DF526A007A431F /* StretchyHeaderLayout.swift in Sources */,
+				4362326928DFA6E900B41DB3 /* OverviewCell.swift in Sources */,
 				43B9983528DF4642007A431F /* HeaderView.swift in Sources */,
 				43B9983128DF3617007A431F /* StretchyHeaderCollectionViewController.swift in Sources */,
 				43B9983328DF364D007A431F /* StretchyHeaderView.swift in Sources */,

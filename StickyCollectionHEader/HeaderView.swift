@@ -12,6 +12,7 @@ class HeaderView: UICollectionReusableView {
     let imageView: UIImageView = {
         let iv = UIImageView(image:UIImage(named: "pizza"))
         iv.contentMode = .scaleToFill
+
         return iv
     }()
     //animate blur view
@@ -27,6 +28,8 @@ class HeaderView: UICollectionReusableView {
         imageView.fillSuperview()
         //blur
         setupVisualEffectBlur()
+        //gradient
+        setupGradientLayer()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,25 +50,47 @@ class HeaderView: UICollectionReusableView {
         animator.fractionComplete = 0
     }
     
+    //gradient layer
+    fileprivate func setupGradientLayer(){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.5, 1]
+//        layer.addSublayer(gradientLayer)
+        
+        //using a subview to make it more dynamic
+        let gradientcontainerView = UIView()
+        addSubview(gradientcontainerView)
+        gradientcontainerView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        gradientcontainerView.layer.addSublayer(gradientLayer)
+        //needs a frame, static frame
+        gradientLayer.frame = self.bounds
+        
+        //trick to move the black gradient layer
+        gradientLayer.frame.origin.y -= bounds.height
+        
+        //adding the label
+        let heavyLabel = UILabel()
+        heavyLabel.text = "Pizza"
+        heavyLabel.font = .systemFont(ofSize: 44, weight: .heavy)
+        heavyLabel.textColor = .white
+        
+        
+        let descriptionLabel = UILabel()
+        descriptionLabel.text = "These are the ingredients inside the pizza and the nuttrients are below"
+        descriptionLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        descriptionLabel.textColor = .white
+        descriptionLabel.numberOfLines = 0
+        
+        //adding them using a stackview
+        let stackView  = UIStackView(arrangedSubviews: [
+            heavyLabel,descriptionLabel
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        addSubview(stackView)
+        stackView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+    }
+    
     
 }
 
-//struct HeaderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Container().edgesIgnoringSafeArea(.all)
-//    }
-//
-//    struct Container: UIViewControllerRepresentable {
-//
-//        func makeUIViewController(context: Context) -> UIViewController {
-//
-//        }
-//
-//        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-//        }
-//
-//        typealias UIViewControllerType = UIViewController
-//
-//
-//    }
-//}
